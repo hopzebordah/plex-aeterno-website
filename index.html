@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    <head>
+        <title>plex-aeterno</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/> 
+        <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <style>
+            div, h2 { transition: all 0.1s; }
+            a { text-decoration: none; display: block; }
+            a:active, a:hover { color: #cccccc; }
+            body {
+                background-color: #ebebeb;
+            }
+
+            /* begin header styles */
+            .header { 
+                position: fixed; z-index: 10; 
+                width: 100%;
+                background-color: rgba(76, 76, 76, 0.8);
+            } 
+            .header-full {
+                height: 120px;
+            }
+            .header-full h2 {
+                padding-top: 30px;
+            }
+            .header-mini {
+                height: 75px;
+            }
+            .header-mini h2 {
+                padding-top: 10px;
+            }
+
+            /* begin main content styles */
+            .body-content {
+                width: 100%;
+            }
+            .content-unfocused {
+                height: 120px;
+            }
+            .content-focused {
+                background-color: rgba(65, 128, 46, 0.8) !important;
+                height: 300px;
+            }
+            .body-subcontent {
+                background-color: rgba(16, 91, 146, 0.7); border-radius: 25px;
+                display: none;
+                margin: auto; width: 50%; height: 175px;
+            }
+            .code {
+                background-color: rgba(93, 143, 182, 1);
+            }
+            .info {
+                background-color: rgba(90, 134, 168, 1);
+            }
+            .contact {
+                background-color: rgba(83, 110, 131, 1);
+            }
+            .footer {
+                background-color: rgba(76, 76, 76, 0.8);
+                height: 50px;
+            }
+
+            /* begin text styles */
+            .bigtitle {
+                color: #ffffff; font: 40px Arial; 
+                text-align: center; padding-top: 30px; padding-bottom: 15px;
+            }
+            .normaltext {
+                color: #ffffff; font: 20px Arial;
+                padding: 9px; text-align: center;
+            }
+            .footertext {
+                color: #ffffff; font: 15px Arial;
+                text-align: center; padding-top: 15px;
+            }
+        </style>
+        
+        <script>
+            $(document).ready(function() {
+                $(document).on("scroll", function() {
+                    if($(document).scrollTop()>40) {
+                        $(".header").removeClass("header-full").addClass("header-mini");
+                    } else {
+                        $(".header").removeClass("header-mini").addClass("header-full");
+                    }
+                });
+
+                $(".body-content").hover(
+                    function() { return; }, 
+                    function() { 
+                        $(this).find(".body-subcontent, .body-subcontent *").css("display", "none");  
+                        $(this).removeClass("content-focused").addClass("content-unfocused");
+                });     
+                
+                $(".body-content").click(function() {
+                    $(this).removeClass("content-unfocused").addClass("content-focused");
+                    $(this).find(".body-subcontent, .body-subcontent *").css("display", "block");
+                });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div class="header header-full">
+            <h2 class="bigtitle">plex-aeterno</h2>
+        </div>
+        <div class="content-unfocused"></div>
+
+        <div class="body-content content-unfocused code">
+            <h2 class="bigtitle">&lt;&#47;&gt;</h2>
+            <div class="body-subcontent">
+                <ul>
+                    <li><a class="normaltext" href="#">base64 encoder</a></li>
+                    <li><a class="normaltext" href="#">.wav audio audio visualizer</a></li>
+                    <li><a class="normaltext" href="#">linked-list class</a></li>
+                    <li><a class="normaltext" href="#">this website's code</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="body-content content-unfocused info">
+            <h2 class="bigtitle">i</h2>
+            <div class="body-subcontent">
+                <p class="normaltext">some dumbass text about who i am</p>
+            </div>
+        </div>
+        <div class="body-content content-unfocused contact">
+            <h2 class="bigtitle">@</h2>
+            <div class="body-subcontent">
+                <p class="normaltext">some more dumbass text about how to contact me if u wanna talk lol aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+            </div>
+        </div> 
+        
+        <img src="smokiestrail.JPG" alt="smokies appalachian trail" style="width:100%;height:100%;vertical-align:top">
+        <!-- <img src="redlight.JPG" alt="paytons car lol" style="width:100%;height:100%;vertical-align:top;"> 
+        <img src="fire.JPG" alt="firepit" style="width:100%;height:100%;vertical-align:top;"> -->
+        
+        <div class="body-content footer">
+            <h2 class="footertext">2018<h2>
+        <div> 
+        
+    </body>
+</html>

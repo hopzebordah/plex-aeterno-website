@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>plex-aeterno</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/> 
+        <link rel="stylesheet" type="text/css" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+        <style>
+            tab { padding-left: 2em; }
+            header, div, li, h2 { transition: all 0.5s; -moz-transition all 0.5s; }
+            body { background-color: #ebebeb; 
+                    font: normal 10px Arial; color: #FFFFFF; }
+
+            header { background-color: rgba(76, 76, 76, 0.8); position: fixed; 
+                        z-index: 10; width: 100%; height: 120px; border-bottom: 1px #000000}     
+            header.large { height: 120px; }
+            header.small { height: 75px; }
+
+            header h2 { color: #eeeeee; margin-top: 30px; font-size: 40px; text-align: center; }
+            header.large h2 { margin-top: 30px; }
+            header.small h2 { margin-top: 10px; }
+
+            ul { width: 100%; }
+            li { display: inline; }
+            header ul { float: left; width: 50%;}
+            header li { float: left; margin-top: 45px; margin-left: 8%; }
+            header a { color: #eeeeee; text-decoration: none; text-transform: uppercase;
+                        font-size: 20px; }
+            header a:active, header a:hover { color: #c7c7c7; }
+            header.large li { margin-top: 45px; }
+            header.small li { margin-top: 25px; }
+    
+            div { background-color: rgba(65, 65, 65, 0.0); width: 100%; height: 120px; }
+            div.colors h2 { font-size: 40px; padding-top: 35px; text-align: center; }
+
+            div.code { background-color: rgba(18, 103, 166, 0.7); }
+            div.code p { font-size: 25px; text-align: center; vertical-align: middle;  margin-top: 30px; }
+
+            div.three { background-color: rgba(16, 91, 146, 0.7); }
+            div.four { background-color: rgba(12, 57, 90, 0.7); }
+
+            div.large { background-color: rgba(65, 128, 46, 0.7); height: 200px; }
+            div.small { height: 120px; }
+
+            .visible { visibility: visible; }
+            .invisible { visibility: hidden; }
+        </style>
+
+        <script>
+            $(document).ready(function() {
+                $(document).on("scroll", function() {
+                    if($(document).scrollTop()>40) {
+                        $("header").removeClass("large").addClass("small");
+                    } else {
+                        $("header").removeClass("small").addClass("large");
+                    }
+                });
+
+                $("div.colors").hover(
+                    function() { return; }, 
+                    function() { 
+                        $(this).removeClass("large").addClass("small"); 
+                        $(this).find("p").css("visibility", "hidden");
+                });     
+                
+                $("div.colors").click(function() {
+                    $(this).removeClass("small").addClass("large"); 
+                    $(this).find("p").css("visibility", "visible");
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <header class="large">
+            <h2>plex-aeterno</h2>
+            <!-- <ul>
+                <li><a href="#">main</a></li>
+                <li><a href="#">info</a></li>
+                <li><a href="#">contact</a></li>
+            </ul> -->
+        </header>
+        
+        <div></div>
+
+        <div class="colors code">
+            <h2>&lt;&#47;&gt;</h3>
+            <!-- <p class="invisible"><a href="#">Java</a><tab>C++<tab>Python<tab>iOS<tab>JavaScript<tab>Linux</p> -->
+        </div>
+        <div class="colors help">
+            <h2>i need to refactor all this shit css and remake the efing form</h2>
+        </div>
+        <div class="colors four"></div> 
+        
+        <div style="height: 1000px;"></div>
+  
+    </body>
+
+</html>
